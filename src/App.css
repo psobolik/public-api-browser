@@ -1,0 +1,68 @@
+#root {
+    margin: 20px;
+}
+
+.App {
+}
+
+.App h1 {
+    font-size: 24pt;
+    /*color: chocolate;*/
+    margin: 1px 0;
+    padding: 0;
+}
+
+.App h2 {
+    font-size: 18pt;
+    color: chocolate;
+    margin: 10px 1px 1px 1px;
+    padding: 0;
+}
+
+.Header {
+    width: 90%;
+    background-color: darkslategray;
+    color: aliceblue;
+    padding: 0.5em;
+}
+
+.Header a {
+    color: lightblue;
+}
+
+.Panel {
+    float: left;
+    margin-right: 1em;
+}
+
+.Panel select::-webkit-scrollbar {
+    width: 1em;
+}
+
+.EntryTable {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: darkslategray 1px solid;
+}
+
+.EntryTable th {
+    text-align: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: darkslategray;
+    color: aliceblue;
+}
+
+.EntryTable td {
+    border-bottom: lightblue 1px solid;
+    overflow: visible;
+    vertical-align: text-top;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.EntryTable tr:nth-child(even) {
+    background-color: aliceblue;
+}
