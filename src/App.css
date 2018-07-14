@@ -7,16 +7,20 @@
 
 .App h1 {
     font-size: 24pt;
-    /*color: chocolate;*/
     margin: 1px 0;
     padding: 0;
 }
 
 .App h2 {
     font-size: 18pt;
-    color: chocolate;
-    margin: 10px 1px 1px 1px;
-    padding: 0;
+    color: darkslategray;
+    background-color: aliceblue;
+    margin: 10px 0 0 0;
+    padding: 0 4px;
+    border: darkslategray 1px solid;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .Header {
@@ -24,12 +28,18 @@
     background-color: darkslategray;
     color: aliceblue;
     padding: 0.5em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .Header a {
-    color: lightblue;
+    color: aliceblue;
 }
 
+.Header a:hover {
+    color: white;
+}
 .Panel {
     float: left;
     margin-right: 1em;
@@ -57,10 +67,7 @@
     border-bottom: lightblue 1px solid;
     overflow: visible;
     vertical-align: text-top;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding: 0.25em 0.5em;
 }
 
 .EntryTable tr:nth-child(even) {
