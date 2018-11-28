@@ -15,8 +15,8 @@
     font-size: 18pt;
     color: darkslategray;
     background-color: aliceblue;
-    margin: 10px 0 0 0;
-    padding: 0 4px;
+    margin: 0.5em 0 0 0;
+    padding: 0.15em 0 0 0.15em;
     border: darkslategray 1px solid;
     border-bottom: none;
     border-top-left-radius: 5px;
@@ -40,6 +40,11 @@
 .Header a:hover {
     color: white;
 }
+
+select.Categories {
+    font-size: medium;
+}
+
 .Panel {
     float: left;
     margin-right: 1em;
