@@ -37,7 +37,9 @@ class App extends Component {
           <div><a href='https://github.com/toddmotto/public-apis'>Public APIs Github Project</a> | <a
             href='https://api.publicapis.org'>Public API for Public APIs</a></div>
         </div>
-        <CategoryList categories={this.state.categories} selectCategoryHandler={(e) => this.selectCategoryHandler(e)} />
+        <CategoryList categories={this.state.categories}
+                      electedCategory={this.state.selectedCategory}
+                      selectCategoryHandler={(e) => this.selectCategoryHandler(e)} />
         <EntryList entries={this.state.entries} />
       </div>
     )
@@ -52,7 +54,7 @@ class App extends Component {
   }
 
   fetchCategories () {
-    fetch(this.state.baseUri + 'categories')
+    fetch(`${this.state.baseUri}categories`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -61,7 +63,10 @@ class App extends Component {
             isLoaded: true
           }
         })
-        if (res != null && res.length > 0) this.fetchEntries(res[0])
+        if (res != null && res.length > 0) {
+          this.state.selectedCategory = res[0]
+          this.fetchEntries(res[0])
+        }
       },
       error => {
         this.setState({
@@ -74,10 +79,11 @@ class App extends Component {
   }
 
   fetchEntries (category) {
-    fetch(this.state.baseUri + 'entries?category=' + encodeURIComponent(category))
+    fetch(`${this.state.baseUri}entries?category=${encodeURIComponent(category)}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
+          selectedCategory: category,
           entries: {
             category: category,
             list: res.entries,

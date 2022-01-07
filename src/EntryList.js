@@ -25,11 +25,13 @@ function EntryList (props) {
       <span className='Panel'>
         <h2>{category}</h2>
         <table className='EntryTable'>
-          <col width='150px' />
-          <col width='200px' />
-          <col width='80px' />
-          <col width='80px' />
-          <col width='80px' />
+          <colgroup>
+            <col width='150px' />
+            <col width='200px' />
+            <col width='80px' />
+            <col width='80px' />
+            <col width='80px' />
+          </colgroup>
           <thead><tr><th>API</th><th>Description</th><th>Auth</th><th>HTTPS</th><th>CORS</th></tr></thead>
           <tbody>
             {rows}

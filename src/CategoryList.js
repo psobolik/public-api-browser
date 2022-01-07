@@ -17,7 +17,10 @@ function CategoryList (props) {
     return (
       <span className='Panel'>
         <h2>Category</h2>
-        <select className={'Categories'} size={listItems.length} onChange={(e) => props.selectCategoryHandler(e)}>
+        <select className={'Categories'}
+                size={listItems.length}
+                value={props.selectedCategory}
+                onChange={(e) => props.selectCategoryHandler(e)}>
           {listItems}
         </select>
       </span>
