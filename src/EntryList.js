@@ -17,7 +17,7 @@ function EntryList (props) {
     return <div>Error: {error.message}</div>
   } else if (!isLoaded) {
     return <p>Loading entries...</p>
-  } else {
+  } else if (list && Array.isArray(list)) {
     const rows = list.map((item, index) =>
       <EntryRow key={index} entry={item} />
     )
@@ -39,5 +39,6 @@ function EntryList (props) {
       </span>
     )
   }
+  return null
 }
 export default EntryList

@@ -38,7 +38,7 @@ class App extends Component {
             href='https://api.publicapis.org'>Public API for Public APIs</a></div>
         </div>
         <CategoryList categories={this.state.categories}
-                      electedCategory={this.state.selectedCategory}
+                      selectedCategory={this.state.selectedCategory}
                       selectCategoryHandler={(e) => this.selectCategoryHandler(e)} />
         <EntryList entries={this.state.entries} />
       </div>
@@ -63,9 +63,9 @@ class App extends Component {
             isLoaded: true
           }
         })
-        if (res != null && res.length > 0) {
-          this.state.selectedCategory = res[0]
-          this.fetchEntries(res[0])
+        if (res != null && res.categories != null) {
+          this.state.selectedCategory = res.categories[0]
+          this.fetchEntries(res.categories[0])
         }
       },
       error => {

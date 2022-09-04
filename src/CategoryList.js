@@ -10,8 +10,8 @@ function CategoryList (props) {
     return <div>Error: {error.message}</div>
   } else if (!isLoaded) {
     return <div>Loading...</div>
-  } else {
-    const listItems = list.sort().map((item, index) =>
+  } else if (list && list.categories) {
+    const listItems = list.categories.sort().map((item, index) =>
       <CategoryItem key={index} value={item} />
     )
     return (
@@ -26,5 +26,6 @@ function CategoryList (props) {
       </span>
     )
   }
+  return null
 }
 export default CategoryList

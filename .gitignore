@@ -177,5 +177,13 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # I added this, to ignore the react-script build output
 build/
